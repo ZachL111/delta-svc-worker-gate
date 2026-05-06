@@ -1,0 +1,17 @@
+{
+  "repo": "delta-svc-worker-gate",
+  "thresholds": {
+    "signal": 2,
+    "slack": 1,
+    "confidence": 1,
+    "drag": 2,
+    "ship": 181,
+    "watch": 108
+  },
+  "terms": [
+    "queue pressure",
+    "retry load",
+    "worker slack",
+    "session drift"
+  ]
+}
