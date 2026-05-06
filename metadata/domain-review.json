@@ -1,0 +1,73 @@
+{
+  "repo": "delta-svc-worker-gate",
+  "language": "Kotlin",
+  "category": "Backend services",
+  "goal": "Design a Kotlin verification harness for worker systems, covering stream reduction, windowed input fixtures, and failure-oriented tests.",
+  "review_model": {
+    "terms": [
+      "queue pressure",
+      "retry load",
+      "worker slack",
+      "session drift"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "queue pressure",
+      "signal": 61,
+      "slack": 25,
+      "drag": 18,
+      "confidence": 72,
+      "score": 165,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "retry load",
+      "signal": 71,
+      "slack": 48,
+      "drag": 13,
+      "confidence": 89,
+      "score": 240,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "worker slack",
+      "signal": 70,
+      "slack": 30,
+      "drag": 19,
+      "confidence": 56,
+      "score": 169,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "session drift",
+      "signal": 82,
+      "slack": 51,
+      "drag": 19,
+      "confidence": 85,
+      "score": 243,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "queue pressure",
+      "signal": 92,
+      "slack": 52,
+      "drag": 31,
+      "confidence": 67,
+      "score": 210,
+      "lane": "ship"
+    }
+  ]
+}
